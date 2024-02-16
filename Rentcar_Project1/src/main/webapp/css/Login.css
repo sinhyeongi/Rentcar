@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+th{
+	border:none;
+}
+td:has(input){
+	padding-right: 10px;
+}
+#login_submit{
+	background-color: #a899ff;
+	border-radius: 5px;
+	border: 1px solid #e7e7e7;
+	transition : 0.7s;
+}
+#login_submit:hover{
+	background-color: #7e7e7e;
+	color: white;
+	border: 1px solid gray;
+}

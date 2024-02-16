@@ -14,16 +14,16 @@ public class Login_P implements Page{
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		if(request.getParameter("id") == null) {
+			request.setAttribute("title", "로그인");
 			return "Login";
 		}
 		String log = MemberDAO.getInstance().LoginCheck(request.getParameter("id"), request.getParameter("pw"));
 		System.out.println(log);
 		request.getSession().setAttribute("log", log);
-		if(log == null) {
-			response.getWriter().print("true");
-			return null;
+		if(log != null) {
+			response.getWriter().print(log);
 		}
-		response.getWriter().print("false");
+		
 		
 		return null;
 	}

@@ -1,0 +1,112 @@
+@charset "UTF-8";
+body{
+	background-color: #b98cab;
+}
+.MemberInfo_main{
+	display:flex;
+	width: 100%;
+	height: 100%;
+}
+.MemberInfo_main > h2{
+	flex:1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 5px 5px 0 black;
+	margin-bottom: 10px;
+	border:1px solid white;
+	border-radius: 7px;
+	background-color: #466e5d;
+	color:white;
+}
+.MemberInfo_main > form{
+	flex:9;
+}
+table{
+	display:flex;
+	border:1px solid #e8e9e8;
+	border-radius:7px;
+	flex:9;
+	width: 100%;
+	height: 100%;
+	background-color: #a6b0ec;
+	box-shadow: 5px 5px 0 black;
+}
+tbody{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+tr{
+	flex:1;
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+td,th{
+	flex:1;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-bottom: 1px solid #e7e7e7;
+}
+th{
+	border-right: 1px solid #e7e7e7;	
+}
+td > input {
+	width: 80%;
+	text-align: center;
+}
+td:has(textarea){
+	margin-top:10px;
+	box-sizing: border-box;
+}
+textarea{
+	width:100%;
+	height:100%;
+	text-align: center;
+	border: 1px solid gray;
+	border-radius: 3px;
+	transition : 2s;
+}
+textarea:focus{
+	outline-color:red;
+	height: 50vh;
+	position: absolute;
+	width:80%;
+	top : 10%;
+	left : 5%;
+}
+#MemberInfo_submit{
+	margin-top:10px;
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid #e7e7e7;
+	box-sizing: border-box;
+	background-color: gray;
+	transition : 1.3s;
+}
+#MemberInfo_submit:hover{
+	background-color: black;
+	color: white;	
+}
+#MemberDelete_btn{
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid red;
+	box-sizing: border-box;
+	background-color: red;
+	transition : 1.3s;
+}
+#MemberDelete_btn:hover{
+	transform:scale(1.2);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

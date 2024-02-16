@@ -11,6 +11,7 @@ public class CarVO {
 	private String img;
 	private String info;
 	
+	public CarVO() {}
 	public CarVO(int no, String name, String category, int price, int usepeople, int total_qty, String company,
 			String img, String info) {
 		super();

@@ -103,4 +103,58 @@ public class Member_DB {
 		
 		return cnt;
 	}
+	public int Update(MemberVO vo) {
+		int cnt = -1;
+		String sql = "update member set email = ?,tel = ?,hobby = ?,job =?,age = ?, info = ? where id = ?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, vo.getEmail());
+			ps.setString(2, vo.getTel());
+			ps.setString(3, vo.getHobby());
+			ps.setString(4, vo.getJob());
+			ps.setString(5, vo.getAge());
+			ps.setString(6, vo.getInfo());
+			ps.setString(7, vo.getId());
+			cnt = ps.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+	public int InsertMember(MemberVO vo) {
+		int cnt = -1;
+		String sql = "insert into member (id,pw,email,tel,hobby,job,age,info) values(?,?,?,?,?,?,?,?)";
+		try {
+			Connection();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, vo.getId());
+			ps.setString(2, vo.getPw());
+			ps.setString(3, vo.getEmail());
+			ps.setString(4, vo.getTel());
+			ps.setString(5, vo.getHobby());
+			ps.setString(6, vo.getJob());
+			ps.setString(7, vo.getAge());
+			ps.setString(8, vo.getInfo());
+			cnt = ps.executeUpdate();
+			DeConnection();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+	public int DeleteMember(String id) {
+		int cnt = -1;
+		String sql = "delete from member where id = ?";
+		try {
+			Connection();
+			ps =con.prepareStatement(sql);
+			ps.setString(1, id);
+			cnt = ps.executeUpdate();
+			DeConnection();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return cnt;
+	}
 }

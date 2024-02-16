@@ -28,4 +28,13 @@ public class MemberDAO {
 	public String LoginCheck(String id, String pw) {
 		return db.LoginCheck(id, pw);
 	}
+	public int UpdateInfo(MemberVO vo) {
+		return db.Update(vo);
+	}
+	public int InsertMember(MemberVO vo) {
+		return db.InsertMember(vo);
+	}
+	public int DeleteMember(String id) {
+		return db.DeleteMember(id);
+	}
 }

@@ -1,5 +1,7 @@
 package DTO;
 
+import javax.servlet.http.HttpServletRequest;
+
 public class MemberVO {
 	private int no;
 	private String id;
@@ -10,7 +12,7 @@ public class MemberVO {
 	private String job;//하는일
 	private String age;
 	private String info;
-	
+	public MemberVO(){}
 	public MemberVO(int no, String id, String pw, String email, String tel, String hobby, String job, String age,
 			String info) {
 		super();
@@ -88,5 +90,13 @@ public class MemberVO {
 	public void setInfo(String info) {
 		this.info = info;
 	}
-	
+	public void setUpData(HttpServletRequest request) {
+		this.id = (String)request.getSession().getAttribute("log");
+		this.email = request.getParameter("email");
+		this.tel = request.getParameter("tel");
+		this.hobby = request.getParameter("hobby");
+		this.job = request.getParameter("job");
+		this.age = request.getParameter("age");
+		this.info = request.getParameter("info");
+	}
 }

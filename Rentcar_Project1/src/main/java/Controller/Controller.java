@@ -28,12 +28,18 @@ public class Controller extends HttpServlet {
 		System.out.println("url = "+url);
 		Page page =  mapper.getPojo(url);
 		if(page == null) {
-			request.setAttribute("page", "404.html");
+			mapper.getPojo("/Main.do").Service(request, response);
+			request.setAttribute("page", "Main.jsp");
 			RequestDispatcher dis = request.getRequestDispatcher("WEB-INF/View/layout.jsp");
 			dis.forward(request, response);
+			return;
 		}
 		String next = page.Service(request, response);
 		if(next != null) {
+			if(next.indexOf("re:") != -1) {
+				response.sendRedirect((next.split(":")[1])+".do");
+				return;
+			}
 			request.setAttribute("page", next+".jsp");
 			RequestDispatcher dis = request.getRequestDispatcher("WEB-INF/View/layout.jsp");
 			dis.forward(request, response);
