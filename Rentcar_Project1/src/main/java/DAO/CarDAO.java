@@ -51,4 +51,13 @@ public class CarDAO {
 	public int CheckName(String name) {
 		return db.CheckName(name);
 	}
+	public String DeleteCar(int no) {
+		return db.DeleteCar(no);
+	}
+	public int UpdatePrice(int no, int price) {
+		return db.UpdatePrice(no, price);
+	}
+	public int UpdateQTY(int no,int qty) {
+		return db.UpdateQTY(no, qty);
+	}
 }

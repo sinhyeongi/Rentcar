@@ -5,10 +5,13 @@ import java.util.HashMap;
 import DTO.CarReserve;
 import DTO.Page;
 import Pojo.Addcar;
+import Pojo.AdminCar;
+import Pojo.Admin_member;
 import Pojo.CarReseve;
 import Pojo.CarReseveOption;
 import Pojo.Car_Infomation;
 import Pojo.CarreserveInfo;
+import Pojo.DeleteCar;
 import Pojo.DeleteMember;
 import Pojo.Login_P;
 import Pojo.Logout_P;
@@ -16,6 +19,8 @@ import Pojo.Main_P;
 import Pojo.MemberInfo;
 import Pojo.MemberInsert;
 import Pojo.Select_car_P;
+import Pojo.UpdateP_Admin;
+import Pojo.UpdateQTY_admin;
 import Pojo.UploadImg;
 import Pojo.UploadImgcheck;
 
@@ -37,6 +42,11 @@ public class Mapper {
 		mapper.put("/addcar.do", new Addcar());
 		mapper.put("/UploadImg.do", new UploadImg());
 		mapper.put("/UploadImgcheck.do", new UploadImgcheck());
+		mapper.put("/Admin_Car.do", new AdminCar());
+		mapper.put("/DeleteCar.do", new DeleteCar());
+		mapper.put("/UpdateP_admin.do", new UpdateP_Admin());
+		mapper.put("/UpdateQTY_admin.do", new UpdateQTY_admin());
+		mapper.put("/Admin_Member.do", new Admin_member());
 	}
 	public Page getPojo(String key) {
 		return mapper.get(key);

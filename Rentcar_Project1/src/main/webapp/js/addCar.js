@@ -45,7 +45,7 @@ $('#addCar_submit').click(function(){
 $('#img').change(function(){
 	let t = $(this)[0].files[0].name;
 	t = t.substring(0,t.indexOf('.'));
-	const reg = /^[a-zA-Z0-9]+$/;
+	const reg = /^[a-zA-Z0-9\_]+$/;
 	if(reg.test(t) == false){
 		alert('파일 명 한글은 불가능 합니다');
 		$(this).val('');

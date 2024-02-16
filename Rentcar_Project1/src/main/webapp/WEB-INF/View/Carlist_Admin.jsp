@@ -2,11 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="ctx" value="${pageContext.request.contextPath }"></c:set>
-<head>
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script defer="defer" type="text/javascript" src="${ctx }/js/Carlist.js?dsa"></script>
-</head>
-<input type="hidden" value="${log }" id="log">
+<form method="post">
 <table>
 <tr>
 <th>차량 번호</th>
@@ -18,6 +14,7 @@
 <th>이미지</th>
 <th>회사 정보</th>
 <th>차량 정보</th>
+<th>차량 삭제</th>
 </tr>
 <c:forEach var="car" items="${Carlist }">
 <tr>
@@ -34,9 +31,9 @@
 대형
 </c:if>
 </td>
-<td>${car.price }</td>
+<td><input type="number" name="price" value="${car.price }" readonly="readonly"></td>
 <td>${car.usepeople }</td>
-<td>${car.total_qty }</td>
+<td><input type="number" name="total_qty" value="${car.total_qty }" readonly="readonly"></td>
 <td class="img_session">
 <c:if test="${car.img eq null }">
 <img src="http://placehold.it/50x50" alt="no img"/>
@@ -47,7 +44,11 @@
 </td>
 <td>${car.company }</td>
 <td>${car.info }</td>
+<td>
+	<input type="button" id="delete_car_admin" value="삭제하기">
+</td>
 </tr>
+
 </c:forEach>
 </table>
-
+</form>

@@ -112,4 +112,51 @@ public class CarReserve_DB {
 		}
 		return cnt;
 	}
+	public ArrayList<String> getCarreservecancel_Oneuser(String id){
+		ArrayList<String> list = new ArrayList<String>();
+		String sql = "select * from carreserve where id = ?";
+		try {
+			Connection();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, id);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				String str = String.valueOf(rs.getInt("no"))+"/"+String.valueOf(rs.getInt("qty"));
+				list.add(str);
+			}
+			DeConnection();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	public int Carreservecancel_Oneuser(String id) {
+		int cnt = 0;
+		String sql = "delete from carreserve where id = ?";
+		try {
+			Connection();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, id);
+			cnt = ps.executeUpdate();
+			DeConnection();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+	public int Carreservecancel_Admin(int no) {
+		int cnt = 0;
+		String sql = "delete from carreserve where no = ?";
+		try {
+			Connection();
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, no);
+			cnt = ps.executeUpdate();
+			DeConnection();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+	
 }

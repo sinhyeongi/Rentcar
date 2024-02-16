@@ -27,12 +27,12 @@
 <td colspan="4" style="border:1px solid green;" id="CarReserve_view">
 <table class="car_view_table">
 <tr>
-<td colspan="6" class="car_view_header">수량 <input type="number" name="car_count" id="car_count" value="1" min="1"></td>
+<td colspan="6" class="car_view_header">수량 <input type="number" name="car_count" id="car_count" value="1" min="1" max="1"></td>
 </tr>
 <c:forEach var="item" items="${list }">
 <c:if test="${item.total_qty ne 0 }">
 <tr>
-<td><input type="radio" name="car" value="${item.no }/${item.price}"<c:if test="${target eq item.no }">checked</c:if>></td>
+<td><input type="radio" name="car" value="${item.no }/${item.price}"></td>
 <c:if test="${item.img ne null }">
 <td><img src="${ctx }/img/${item.img }"></td>
 </c:if>

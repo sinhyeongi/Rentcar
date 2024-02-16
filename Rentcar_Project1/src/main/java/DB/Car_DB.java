@@ -173,4 +173,55 @@ public class Car_DB {
 		}
 		return cnt;
 	}
+	public String DeleteCar(int target) {
+		String img = null;
+		String sql = "delete from rentcar where no = ?";
+		String sql2 = "select * from rentcar where no = ?";
+		try {
+			Connection();
+			ps = con.prepareStatement(sql2);
+			ps.setInt(1, target);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				img = rs.getString("img");
+			}
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, target);
+			ps.execute();
+			DeConnection();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return img;
+	}
+	public int UpdatePrice(int no,int price) {
+		int cnt = 0;
+		String sql = "update rentcar set price = ? where no = ?";
+		try {
+			Connection();
+			ps = con.prepareCall(sql);
+			ps.setInt(1, price);
+			ps.setInt(2, no);
+			cnt = ps.executeUpdate();
+			DeConnection();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+	public int UpdateQTY(int no, int qty) {
+		int cnt = 0;
+		String sql = "update rentcar set total_qty = ? where no = ?";
+		try {
+			Connection();
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, qty);
+			ps.setInt(2, no);
+			cnt = ps.executeUpdate();
+			DeConnection();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return cnt;
+	}
 }

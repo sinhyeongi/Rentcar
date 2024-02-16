@@ -26,4 +26,13 @@ public class CarReserveDAO {
 	public int Carreservecancel(int seq,String id) {
 		return db.Carreservecancel(seq,id);
 	}
+	public int Carreservecancel_OneUser(String id) {
+		return db.Carreservecancel_Oneuser(id);
+	}
+	public ArrayList<String> getCarreservecancel_Oneuser(String id){
+		return db.getCarreservecancel_Oneuser(id);
+	}
+	public int Carreservecancel_ad(int no) {
+		return db.Carreservecancel_Admin(no); 
+	}
 }

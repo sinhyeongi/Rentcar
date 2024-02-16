@@ -1,16 +1,6 @@
 /**
  * 
  */
- $(window).load(function(){
- 	let t = $('input[name=car]:checked');
- 	if(!t.val()){
- 		return;
- 	}
- 	$('.price_btn').css('flex','1');
- 		$('.price_btn').css('height','100%');
- 		$('.car_view_header').css('height','auto');
- 		$('.car_view_header').css('display','table-cell');
- });
  let today = new Date();
  let todaystr = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0'+today.getDate()).slice(-2);
  let sd = '';
@@ -105,7 +95,7 @@ $('input[name=car]').change(function(){
  		$('.car_submit').attr('type','button');
 		return;
 	}
-	let tartget= $('input[name=car]:checked').val().split("/")[0];
+	let tartget= $(this).closest('tr').prevAll().length;
  	$('.price_btn').css('flex','1');
  	$('.price_btn').css('height','100%');
  	$('.car_view_header').css('height','auto');

@@ -59,25 +59,36 @@ td > input{
 	flex:1;
 	width: 100%;
 	box-sizing: border-box;
+	transition : 0.6s;
 }
 td > span{
 	flex:1;
 }
-td:has(inpt){
-	padding: 30px;
-	box-sizing: border-box;
-}
+
 input:focus{
 	outline-color: red;
 	outline-width: 1px;
+	padding:15px;
 }
+
 textarea {
 	width: 95%;
 	transition : 1.3s;
+	resize: none;
+	border-radius: 7px;
 }
 textarea:focus{
-	outline-color: red;
+	outline-color: #e7e7e7;
 	width: 100%;
+	position: absolute;
+	top:10%;
+	left:0%;
+	height: 30%;
+	box-sizing: border-box;
+	background: black;
+	color: white;
+	text-align: center;
+	padding-top: 15px;
 }
 #addCar_submit{
 	border: 1px solid #e7e7e7;
