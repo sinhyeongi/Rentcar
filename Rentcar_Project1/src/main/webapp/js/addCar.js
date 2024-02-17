@@ -70,7 +70,7 @@ function check(){
 		$('#price').val('');
 		$('#price').focus();
 		return true;
-	}else if($('#price').val() <= 1000){
+	}else if($('#price').val() < 1000){
 		alert('가격을 1000원 이상 입력해주세요');
 		$('#price').focus();
 		return true;
