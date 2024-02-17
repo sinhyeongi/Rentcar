@@ -24,8 +24,13 @@ public class UploadImg implements Page{
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String root_path = request.getServletContext().getRealPath("");
-		String work_path = "/Users/ssd/Desktop/SHGjspworkspace/Project1/Rentcar/Rentcar_Project1/src/main/webapp/img/";
-		System.out.println(root_path);
+		String work_path = "";
+		String os = System.getProperty("os.name").toLowerCase();
+		if(os.contains("mac")) {
+			work_path = "/Users/ssd/Desktop/SHGjspworkspace/Project1/Rentcar/Rentcar_Project1/src/main/webapp/img/";
+		}else if(os.contains("win")) {
+			work_path = System.getProperty("user.dir") +"\\src\\main\\webapp\\img\\";
+		}
 		File f = new File(root_path+"img");
 		if(!f.exists()) {
 			try {
@@ -37,12 +42,10 @@ public class UploadImg implements Page{
 		}
 		root_path += "img";
 		int size = 1024 * 1024 *10;
-		System.out.println(root_path);
 		MultipartRequest mr = new MultipartRequest(request, root_path,size,"UTF-8",new DefaultFileRenamePolicy());
 		String sfname = mr.getFilesystemName("img");
 		File ofile = mr.getFile("img");
 		File cfile = new File(work_path+sfname);
-		System.out.println(ofile.toString());
 		Files.copy(ofile.toPath(), cfile.toPath());
 		
 		CarVO vo = new CarVO();

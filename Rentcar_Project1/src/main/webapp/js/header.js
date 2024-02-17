@@ -70,3 +70,6 @@ $('#admin_car').click(function(){
 $('#admin_member').click(function(){
 	location.href = "Admin_Member.do";
 })
+$('#admin_Carreserve_all').click(function(){
+	location.href = "Admin_Carreseve.do"
+});

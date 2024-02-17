@@ -54,6 +54,26 @@ public class CarReserve_DB {
 			e.printStackTrace();
 		}
 	}
+	public ArrayList<CarReserve> getAllData(){
+		ArrayList<CarReserve> list = new ArrayList<CarReserve>();
+		String sql = "select * from carreserve";
+		try {
+			Connection();
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				list.add(new CarReserve(rs.getInt("reserve_seq"),
+						rs.getInt("no"),rs.getString("id"),rs.getInt("qty"),
+						rs.getString("dday"),rs.getInt("rday"),rs.getInt("usein"),rs.getInt("usewifi"),
+						rs.getInt("usenavi"),rs.getInt("useseat"),rs.getInt("price")));
+			}
+			DeConnection();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
 	public int InsertData(CarReserve vo) {
 		int cnt = -1;
 		String sql = "insert into carreserve(no,id,qty,dday,rday,usein,usewifi,usenavi,useseat,price) values(?,?,?,?,?,?,?,?,?,?)";
@@ -137,6 +157,20 @@ public class CarReserve_DB {
 			Connection();
 			ps = con.prepareStatement(sql);
 			ps.setString(1, id);
+			cnt = ps.executeUpdate();
+			DeConnection();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+	public int CarreserveCancel_Admin_seq(int seq) {
+		int cnt = 0;
+		String sql = "delete from carreserve where reserve_seq = ?";
+		try {
+			Connection();
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, seq);
 			cnt = ps.executeUpdate();
 			DeConnection();
 		}catch(SQLException e) {

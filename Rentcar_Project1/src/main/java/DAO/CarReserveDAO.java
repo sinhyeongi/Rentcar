@@ -35,4 +35,11 @@ public class CarReserveDAO {
 	public int Carreservecancel_ad(int no) {
 		return db.Carreservecancel_Admin(no); 
 	}
+	public int CarreserveCancel_Admin_seq(int seq) {
+		return db.CarreserveCancel_Admin_seq(seq);
+	}
+	public ArrayList<CarReserve> getAllData(){
+		return db.getAllData();
+		
+	}
 }

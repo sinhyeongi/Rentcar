@@ -25,7 +25,6 @@ public class Controller extends HttpServlet {
 		String url = request.getRequestURI();
 		String path = request.getContextPath();
 		url = url.substring(path.length());
-		System.out.println("url = "+url);
 		Page page =  mapper.getPojo(url);
 		if(page == null) {
 			mapper.getPojo("/Main.do").Service(request, response);

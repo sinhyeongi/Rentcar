@@ -18,7 +18,6 @@ public class CarReseveOption implements Page {
 		if(request.getParameter("id") == null) {
 			return "Main";
 		}
-		System.out.println("price = "+request.getParameter("price"));
 		CarReserve vo = new CarReserve();
 		vo.setNo(Integer.parseInt(request.getParameter("no")));
 		vo.setId(request.getParameter("id"));
@@ -30,7 +29,6 @@ public class CarReseveOption implements Page {
 		vo.setUsenavi(Integer.parseInt(request.getParameter("usenavi")));
 		vo.setUseseat(Integer.parseInt(request.getParameter("useseat")));
 		vo.setPrice(Integer.parseInt(request.getParameter("price")));
-		System.out.println(vo.toString());
 		int cnt = CarReserveDAO.getInstance().InsertData(vo);
 		int cnt2 = CarDAO.getInstance().SubCarCount(vo.getQty(),vo.getNo());
 		response.getWriter().print(cnt);

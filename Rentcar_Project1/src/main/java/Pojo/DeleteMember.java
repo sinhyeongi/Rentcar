@@ -18,7 +18,6 @@ public class DeleteMember implements Page{
 			return null;
 		}
 		String id = request.getParameter("id");
-		System.out.println(id);
 		int cnt =MemberDAO.getInstance().DeleteMember(id);
 		response.getWriter().print(cnt);
 		if(cnt > 0) {

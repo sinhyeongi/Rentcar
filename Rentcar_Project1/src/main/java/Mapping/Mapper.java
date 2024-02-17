@@ -6,6 +6,7 @@ import DTO.CarReserve;
 import DTO.Page;
 import Pojo.Addcar;
 import Pojo.AdminCar;
+import Pojo.Admin_Carreseve;
 import Pojo.Admin_member;
 import Pojo.CarReseve;
 import Pojo.CarReseveOption;
@@ -47,6 +48,7 @@ public class Mapper {
 		mapper.put("/UpdateP_admin.do", new UpdateP_Admin());
 		mapper.put("/UpdateQTY_admin.do", new UpdateQTY_admin());
 		mapper.put("/Admin_Member.do", new Admin_member());
+		mapper.put("/Admin_Carreseve.do", new Admin_Carreseve());
 	}
 	public Page getPojo(String key) {
 		return mapper.get(key);

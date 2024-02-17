@@ -31,7 +31,6 @@ public class CarReseve implements Page{
 		String data[] = request.getParameter("car").split("/");
 		Date dddate = new Date();
 		String data2[] = request.getParameter("startDate").split("-"); 
-		System.out.println(data2[0]);
 		Calendar cal = Calendar.getInstance();
 		cal.set(Integer.parseInt(data2[0]), Integer.parseInt(data2[1])-1, Integer.parseInt(data2[2]));
 		
@@ -51,9 +50,6 @@ public class CarReseve implements Page{
 		vo.setDday(request.getParameter("startDate")+"/"+request.getParameter("startH"));
 		vo.setRday(Integer.parseInt(request.getParameter("car_rent_time")));
 		request.setAttribute("vo", vo);
-		System.out.println(request.getParameter("car_rent_time"));
-		System.out.println(request.getParameter("startDate"));
-		System.out.println(request.getSession().getAttribute("log"));
 		request.setAttribute("price", request.getParameter("price"));
 		request.setAttribute("title", "옵션 선택 페이지");
 		return "Carreserve_option";

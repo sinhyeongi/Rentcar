@@ -18,7 +18,6 @@ public class Login_P implements Page{
 			return "Login";
 		}
 		String log = MemberDAO.getInstance().LoginCheck(request.getParameter("id"), request.getParameter("pw"));
-		System.out.println(log);
 		request.getSession().setAttribute("log", log);
 		if(log != null) {
 			response.getWriter().print(log);

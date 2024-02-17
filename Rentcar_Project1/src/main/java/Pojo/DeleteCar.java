@@ -26,9 +26,15 @@ public class DeleteCar implements Page {
 		String img = CarDAO.getInstance().DeleteCar(target);
 		if(img != null && img.length() > 3) {
 			try {
-				String path = request.getServletContext().getRealPath("");
-				path +="img/";
-				String path2 = "/Users/ssd/Desktop/SHGjspworkspace/Project1/Rentcar/Rentcar_Project1/src/main/webapp/img/";
+				String path = request.getServletContext().getRealPath("") + "img/";
+				String os = System.getProperty("os.name").toLowerCase();
+				String path2 = "";
+				if(os.contains("mac")) {
+					 path2 = "/Users/ssd/Desktop/SHGjspworkspace/Project1/Rentcar/Rentcar_Project1/src/main/webapp/img/";
+				}
+				else if(os.contains("win")) {
+					path2 = System.getProperty("user.dir") + "\\src\\main\\webapp\\img\\";
+				}
 				Path file1 = Paths.get(path+img);
 				Path file2 = Paths.get(path2 + img);
 				Files.delete(file1);

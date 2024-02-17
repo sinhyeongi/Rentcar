@@ -15,7 +15,7 @@
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
 </c:if>
-<script defer="defer" type="text/javascript" src="${ctx }/js/header.js?dsddsdsasaa"></script>
+<script defer="defer" type="text/javascript" src="${ctx }/js/header.js?dsd32saa"></script>
 <c:if test="${page eq 'Main.jsp' }">
 <script defer="defer" type="text/javascript" src="${ctx }/js/Mainjs.js?ddsa"></script>
 </c:if>
@@ -49,6 +49,9 @@
 <c:if test="${page eq 'Admin_member.jsp' }">
 <script defer="defer" type="text/javascript" src="${ctx }/js/Admin_member.js?d32bvds12a"></script>
 </c:if>
+<c:if test="${page eq 'Admin_Carreseve.jsp' }">
+<script defer="defer" type="text/javascript" src="${ctx }/js/Admin_Carreseve.js?d322a"></script>
+</c:if>
 <!-- css link -->
 <link href="${ctx }/css/header.css?d3dddsdsda" rel="stylesheet" type="text/css">
 <c:if test="${page eq 'Login.jsp' }">
@@ -80,6 +83,9 @@
 </c:if>
 <c:if test="${page eq 'Admin_member.jsp' }">
 <link href="${ctx }/css/Admin_member.css?ddbv6h3" rel="stylesheet" type="text/css">
+</c:if>
+<c:if test="${page eq 'Admin_Carreseve.jsp' }">
+<link href="${ctx }/css/Admin_Carreseve.css?ddbv6hgf53" rel="stylesheet" type="text/css">
 </c:if>
 </head>
 <body>

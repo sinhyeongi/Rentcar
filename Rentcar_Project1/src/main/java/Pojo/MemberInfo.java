@@ -14,7 +14,6 @@ public class MemberInfo implements Page{
 	@Override
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("Info Call");
 		if(request.getSession().getAttribute("log") == null) {
 			return "Main";
 		}
@@ -24,7 +23,6 @@ public class MemberInfo implements Page{
 			request.setAttribute("vo", vo);
 			return "MemberInfo";
 		}
-		System.out.println("Info End");
 		response.setCharacterEncoding("UTF-8");
 		MemberVO vo = new MemberVO();
 		vo.setUpData(request);
