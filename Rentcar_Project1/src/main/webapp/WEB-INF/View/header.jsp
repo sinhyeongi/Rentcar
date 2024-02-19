@@ -15,7 +15,7 @@
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
 </c:if>
-<script defer="defer" type="text/javascript" src="${ctx }/js/header.js?dsd32saa"></script>
+<script defer="defer" type="text/javascript" src="${ctx }/js/header.js?dsd32dasaa"></script>
 <c:if test="${page eq 'Main.jsp' }">
 <script defer="defer" type="text/javascript" src="${ctx }/js/Mainjs.js?ddsa"></script>
 </c:if>
@@ -23,7 +23,7 @@
 <script defer="defer" type="text/javascript" src="${ctx }/js/Login.js?d1adddsa"></script>
 </c:if>
 <c:if test="${page eq 'Carreserve.jsp' }">
-<script defer="defer" type="text/javascript" src="${ctx }/js/Carreserve.js?d465cd3a"></script>
+<script defer="defer" type="text/javascript" src="${ctx }/js/Carreserve.js?d4643215cd3a"></script>
 </c:if>
 <c:if test="${page eq 'Carreserve_option.jsp' }">
 <script defer="defer" type="text/javascript" src="${ctx }/js/Carreserve_option.js?dadsdghbdsa"></script>
@@ -115,6 +115,3 @@
 </c:if>
 </div>
 </header>
-<script>
-
-</script>

@@ -6,7 +6,6 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script defer="defer" type="text/javascript" src="${ctx }/js/Carlist.js?dsa"></script>
 </head>
-<input type="hidden" value="${log }" id="log">
 <table>
 <tr>
 <th>차량 번호</th>

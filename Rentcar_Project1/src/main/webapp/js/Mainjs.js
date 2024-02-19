@@ -1,9 +1,4 @@
-/**
- * 
- */
- 
- 
-  $(".category_select").change(function(data){
+$(".category_select").change(function(data){
  	const target = $(".category_select option:selected").val();
  	let cdata = {
  		category : target  

@@ -87,12 +87,13 @@ $(".price_btn").click(function(){
 });
 
 $('input[name=car]').change(function(){
-	if(!startDate.val() || !endDate.val() ||  !start_H.val() || !end_H.val()){
-		$('.price_btn').css('flex','1');
- 		$('.price_btn').css('height','100%');
- 		$('.car_view_header').css('height','auto');
- 		$('.car_view_header').css('display','table-cell');
- 		$('.car_submit').attr('type','button');
+	if(!startDate.val() ||  !start_H.val() ){
+		$('input[name=car]').prop('checked',false);
+		alert('시작 날짜와 시간을 모두 선택하여 주세요');
+		return;
+	}else if(!endDate.val() || !end_H.val()){
+		$('input[name=car]').prop('checked',false);
+		alert('종료 날짜와 시간을 모두 선택하여 주세요');
 		return;
 	}
 	let tartget= $(this).closest('tr').prevAll().length;
