@@ -42,7 +42,7 @@
 <td>${item.name }</td>
 <td>${item.price }원 / 1시간</td>
 <td>탑승 가능 인원 : ${item.usepeople } 명</td>
-<td>남은 수량 : ${item.total_qty } 대<input type="hidden" class="car_max${item.no }" value="${item.total_qty }"></td>
+<td>남은 수량 : ${item.total_qty } 대<input type="hidden" class="car_max" value="${item.total_qty }"></td>
 </tr>
 </c:if>
 </c:forEach>

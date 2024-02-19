@@ -102,7 +102,7 @@ $('input[name=car]').change(function(){
  	$('.car_view_header').css('height','auto');
  	$('.car_view_header').css('display','table-cell');
  	$('#car_count').val('1');
- 	$('#car_count').prop('max',$('.car_max'+tartget).val());
+ 	$('#car_count').prop('max',$('.car_max:eq('+(tartget-1)+')').val());
  	$('.car_submit').attr('type','button');
 });
 $('#car_count').change(function(){
